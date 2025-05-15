@@ -7,7 +7,7 @@ from Iterative_functions import mk_dir
 LOG_DIR_NAME = "logs"
 
 LOG_DIR = mk_dir(LOG_DIR_NAME)
-# LOG_DIR = Path(LOG_DIR_NAME)
+
 
 LOG_FILE = LOG_DIR / f"log_{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.log"
 
