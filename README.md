@@ -98,3 +98,38 @@ Push to GitHub:(VSCode terminal)
 git push origin main
 --------------------------------------------------------------------------------
 # Third Commit
+
+In this step we just add to file data ingestion paramters
+- create a File named "requirements.txt" to add libraries that we will probably need for this step
+- create a File named "config.yaml" in .src\config to configure different parameter for the project and return data with using python-box to use its paramaters like list
+- create a File named "data_ingestion.py" to download and unzip our data
+
+ Commit Workflow: (VSCode terminal)
+
+git add .
+
+Commit changes:(VSCode terminal)
+
+git commit -m "data ingestion added"
+
+Push to GitHub:(VSCode terminal)
+
+git push origin main
+
+ --------------------------------------------------------------------------------
+# Forth Commit
+
+- Update config.yaml and requirements.txt with the necessary data processing configurations and libraries.
+- Create a file named data_processing.py to handle data processing tasks.
+
+ Commit Workflow: (VSCode terminal)
+
+git add .
+
+Commit changes:(VSCode terminal)
+
+git commit -m "data processing added"
+
+Push to GitHub:(VSCode terminal)
+
+git push origin main

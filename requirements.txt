@@ -1,0 +1,13 @@
+pandas
+gdown
+notebook
+python-box==6.0.2
+
+
+
+
+tqdm
+scipy
+tensorflow
+joblib
+numpy
