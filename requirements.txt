@@ -11,3 +11,6 @@ scipy
 tensorflow
 joblib
 numpy
+
+Pillow
+mlflow

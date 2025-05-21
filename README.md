@@ -133,3 +133,38 @@ git commit -m "data processing added"
 Push to GitHub:(VSCode terminal)
 
 git push origin main
+
+ --------------------------------------------------------------------------------
+# Fifth Commit
+
+- Update config.yaml and requirements.txt with the necessary data processing configurations and libraries.
+- Create a file named model_training.py to handle data training tasks.
+
+ Commit Workflow: (VSCode terminal)
+
+git add .
+
+Commit changes:(VSCode terminal)
+
+git commit -m "data training added"
+
+Push to GitHub:(VSCode terminal)
+
+git push origin main
+
+ --------------------------------------------------------------------------------
+# Sixth Commit
+- Update config.yaml, Iterative_functions.py and requirements.txt with the necessary data processing configurations and libraries.
+- Create a file named model_evaluation_mlflow.py to handle data evaluation tasks.
+
+ Commit Workflow: (VSCode terminal)
+
+git add .
+
+Commit changes:(VSCode terminal)
+
+git commit -m "data evaluation added"
+
+Push to GitHub:(VSCode terminal)
+
+git push origin main

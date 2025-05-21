@@ -27,11 +27,11 @@ class DataIngestion:
             zipfile_name = files.local_data_file
 
             artifact_dir = mk_dir(artifacts)
-            logger.info(f"Folder name {artifact_dir} was created")
+            # logger.info(f"Folder name {artifact_dir} was created")
 
             ROW_DIR = Path(artifacts) / raw
             raw_dir = mk_dir(ROW_DIR)
-            logger.info(f"Folder name {ROW_DIR} was created")
+            # logger.info(f"Folder name {ROW_DIR} was created")
 
             logger.info(f"Downloading data from {dataset_url} into file {zipfile_name}")
             file_id = dataset_url.split("/")[-2]

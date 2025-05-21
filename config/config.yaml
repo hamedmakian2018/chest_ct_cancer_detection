@@ -1,14 +1,13 @@
 directories:
   artifact_dir: "artifacts"
   raw_dir: "raw"
-  processing_dir: models
-  train_dir: training
+
 
 files:
   local_data_file: artifacts/raw/data.zip
   base_model_file: artifacts/models/base_model.h5
   updated_base_model_file: artifacts/models/base_model_updated.h5
-  trained_model_file: artifacts/training/trained_model.h5
+  trained_model_file: artifacts/models/training/trained_model.h5
 
 
 
@@ -28,5 +27,5 @@ data_processing:
   augmentation: True
 
 training:
+  training_data_dir: artifacts/raw/Chest-CT-Scan-data
 
-  

@@ -1,13 +1,14 @@
 import logging
 import sys
 from datetime import datetime
-
-from Iterative_functions import mk_dir
+from pathlib import Path
 
 LOG_DIR_NAME = "logs"
 
-LOG_DIR = mk_dir(LOG_DIR_NAME)
+LOG_DIR = Path(LOG_DIR_NAME)
 
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+print(f"Directory created: {LOG_DIR}")
 
 LOG_FILE = LOG_DIR / f"log_{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.log"
 
