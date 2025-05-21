@@ -168,3 +168,30 @@ git commit -m "data evaluation added"
 Push to GitHub:(VSCode terminal)
 
 git push origin main
+
+--------------------------------------------------------------------------------
+# Seventh Commit
+- Create a file named setup.py  to package our code.
+
+ In Python Environment: (VSCode terminal)
+ pip install -e .
+ 
+ 
+ Now, our src folder acts like a Python package.
+ Next:
+
+Create a folder named pipeline, and inside it, create two files: __init__.py and run.py
+
+
+
+Commit Workflow: (VSCode terminal)
+
+git add .
+
+Commit changes:(VSCode terminal)
+
+git commit -m "setup tools and project packaging"
+
+Push to GitHub:(VSCode terminal)
+
+git push origin main
