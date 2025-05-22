@@ -1,0 +1,105 @@
+schema: '2.0'
+stages:
+  full_pipeline:
+    cmd: python pipeline/run.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 95b4ca7250b80bccab08e3b30d56d439
+      size: 678
+    - path: pipeline/run.py
+      hash: md5
+      md5: 237cf3e4fcbebd0e2059cf8e3b0900ed
+      size: 908
+    - path: src/
+      hash: md5
+      md5: 8921dba1a65949f427581b5f3956595d.dir
+      size: 44350
+      nfiles: 18
+    outs:
+    - path: artifacts/
+      hash: md5
+      md5: be159d334dac612b1a6a8dd777a4c229.dir
+      size: 275426882
+      nfiles: 347
+    - path: scores.json
+      hash: md5
+      md5: 12a32b40d94b876ca38050afd6a84501
+      size: 145
+  data_ingestion:
+    cmd: python -m pipeline.01-data_ingestion
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 95b4ca7250b80bccab08e3b30d56d439
+      size: 678
+    - path: pipeline/01-data_ingestion.py
+      hash: md5
+      md5: dbfafab3320cee53c85ff145e659d3db
+      size: 406
+    outs:
+    - path: artifacts/raw
+      hash: md5
+      md5: bd5bb1e21a6b03a94b93a0973e54b4cb.dir
+      size: 98205890
+      nfiles: 344
+  data_processing:
+    cmd: python -m pipeline.02-data_processing --step get_base_model
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 95b4ca7250b80bccab08e3b30d56d439
+      size: 678
+    - path: pipeline/02-data_processing.py
+      hash: md5
+      md5: bc67f89827be248ad7eead18159b4975
+      size: 268
+    outs:
+    - path: artifacts/models/base_model.h5
+      hash: md5
+      md5: eb40789917691c7512c7c80695ab41e3
+      size: 58926064
+    - path: artifacts/models/base_model_updated.h5
+      hash: md5
+      md5: 7c1fbd5bb31f4ec4ed14e36b860dccd3
+      size: 59147464
+  train_model:
+    cmd: python -m pipeline.03-model_training
+    deps:
+    - path: artifacts/models/base_model_updated.h5
+      hash: md5
+      md5: 7c1fbd5bb31f4ec4ed14e36b860dccd3
+      size: 59147464
+    - path: config/config.yaml
+      hash: md5
+      md5: 95b4ca7250b80bccab08e3b30d56d439
+      size: 678
+    - path: pipeline/03-model_training.py
+      hash: md5
+      md5: 8dd0757453ea63ea12e787544e85908d
+      size: 275
+    outs:
+    - path: artifacts/models/training/trained_model.h5
+      hash: md5
+      md5: ac2ed158069a194318c8e2f4a8bd79f5
+      size: 59147464
+  evaluate_model:
+    cmd: python -m pipeline.04-model_evaluation_mlflow
+    deps:
+    - path: artifacts/models/training/trained_model.h5
+      hash: md5
+      md5: ac2ed158069a194318c8e2f4a8bd79f5
+      size: 59147464
+    - path: config/config.yaml
+      hash: md5
+      md5: 95b4ca7250b80bccab08e3b30d56d439
+      size: 678
+    - path: pipeline/04-model_evaluation_mlflow.py
+      hash: md5
+      md5: 0340d72ccda0bafd7eab6fe594948290
+      size: 260
+    outs:
+    - path: scores.json
+      hash: md5
+      md5: 2b3c88476965da28e55cca38d131206c
+      size: 145

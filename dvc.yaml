@@ -1,0 +1,37 @@
+
+
+stages:
+  data_ingestion:
+    cmd: python -m pipeline.01-data_ingestion
+    deps:
+      - pipeline/01-data_ingestion.py
+      - config/config.yaml
+    outs:
+      - artifacts/raw
+
+  data_processing:
+    cmd: python -m pipeline.02-data_processing --step get_base_model
+    deps:
+      - pipeline/02-data_processing.py
+      - config/config.yaml
+    outs:
+      - artifacts/models/base_model.h5
+      - artifacts/models/base_model_updated.h5
+
+  train_model:
+    cmd: python -m pipeline.03-model_training
+    deps:
+      - pipeline/03-model_training.py
+      - artifacts/models/base_model_updated.h5
+      - config/config.yaml
+    outs:
+      - artifacts/models/training/trained_model.h5
+
+  evaluate_model:
+    cmd: python -m pipeline.04-model_evaluation_mlflow
+    deps:
+      - pipeline/04-model_evaluation_mlflow.py
+      - artifacts/models/training/trained_model.h5
+      - config/config.yaml
+    outs:
+      - scores.json

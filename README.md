@@ -171,7 +171,9 @@ git push origin main
 
 --------------------------------------------------------------------------------
 # Seventh Commit
+- Update  requirements.txt with the necessary libraries.
 - Create a file named setup.py  to package our code.
+- Run below code to install added library in requirements.txt
 
  In Python Environment: (VSCode terminal)
  pip install -e .
@@ -191,6 +193,41 @@ git add .
 Commit changes:(VSCode terminal)
 
 git commit -m "setup tools and project packaging"
+
+Push to GitHub:(VSCode terminal)
+
+git push origin main
+
+
+
+--------------------------------------------------------------------------------
+# Eighth Commit
+- Update  requirements.txt with the necessary libraries.
+- Create a file named dvc.yaml to use yaml library for managing and controlling data versioning.
+- Create below files in pipeline folder
+    01-data_ingestion.py
+    02-data_processing.py
+    03-model_training.py
+    04-model_evaluation_mlflow.py
+
+- Run below code to install added library in requirements.txt
+ In Python Environment: (VSCode terminal)
+ pip install -e .
+ 
+ then
+
+ dvc init
+ dvc repro
+ 
+
+
+Commit Workflow: (VSCode terminal)
+
+git add .
+
+Commit changes:(VSCode terminal)
+
+git commit -m "Add DVC pipeline for data ingestion, processing, training, and evaluation"
 
 Push to GitHub:(VSCode terminal)
 

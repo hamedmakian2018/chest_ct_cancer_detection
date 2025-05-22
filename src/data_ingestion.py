@@ -1,3 +1,5 @@
+import os
+import sys
 import zipfile
 from pathlib import Path
 
@@ -5,6 +7,10 @@ import gdown
 
 from src.Iterative_functions import mk_dir
 from src.logger import get_logger
+
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, project_root)
+
 
 logger = get_logger(__name__)
 
