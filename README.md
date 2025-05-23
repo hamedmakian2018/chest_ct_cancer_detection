@@ -232,3 +232,29 @@ git commit -m "Add DVC pipeline for data ingestion, processing, training, and ev
 Push to GitHub:(VSCode terminal)
 
 git push origin main
+
+
+--------------------------------------------------------------------------------
+# Nineth Commit
+- Update  requirements.txt with the necessary libraries.
+- Create a folder named "web" containing two files: __init__.py and application.py
+- create a subfolder named "templates" with the file index.html.
+ These additions utilize the Flask library to build the web application for the project.
+
+- Run below code to install added library in requirements.txt
+ In Python Environment: (VSCode terminal)
+ pip install -e .
+ 
+
+
+Commit Workflow: (VSCode terminal)
+
+git add .
+
+Commit changes:(VSCode terminal)
+
+git commit -m "web application added"
+
+Push to GitHub:(VSCode terminal)
+
+git push origin main

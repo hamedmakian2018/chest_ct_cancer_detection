@@ -16,3 +16,10 @@ Pillow
 mlflow
 
 dvc
+
+
+fastapi[standard]==0.115.12
+Flask
+Flask-Cors
+base64
+-e .

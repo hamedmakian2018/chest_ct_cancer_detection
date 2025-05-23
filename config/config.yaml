@@ -29,3 +29,7 @@ data_processing:
 training:
   training_data_dir: artifacts/raw/Chest-CT-Scan-data
 
+web:
+  host: "0.0.0.0"
+  port: 8080
+  
